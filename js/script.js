@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    const sentence = prompt("Enter a sentence");
 
+    // Business Logic
     function firstAndLastCap(firstL, lastL) {
         return firstL.toUpperCase() + lastL.toUpperCase();
     } 
@@ -30,6 +30,16 @@ $(document).ready(function() {
         return cipherSentence
     }
     
-    let original = cipher(sentence);
-    console.log(original);
+
+    // UI Logic
+    const sentence = prompt("Enter a sentence");
+    const cipherSentence = cipher(sentence);
+
+    $("#img1").click(function() {
+        $("#result").text(cipherSentence)
+    })
+
+    $("#img2").click(function() {
+        $("#result").text(sentence);
+    })
 })
